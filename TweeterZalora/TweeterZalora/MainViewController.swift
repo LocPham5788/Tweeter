@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class MainViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
-
+    
     @IBOutlet weak var txtInputMessage: UITextView!
     @IBOutlet weak var btnSend: UIButton!
     @IBOutlet weak var vwDisplayedMessage: UIView!
@@ -82,7 +82,7 @@ class MainViewController: UIViewController, UITextViewDelegate, UIGestureRecogni
             // Disable send button
             btnSend.isEnabled = false
             // Show chars count label
-            mLabelCharsCount.isHidden = false
+            mLabelCharsCount.isHidden = true
         }
     }
     
@@ -95,9 +95,7 @@ class MainViewController: UIViewController, UITextViewDelegate, UIGestureRecogni
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.dissmissableView.isHidden = false
-        // Clear previous text
-        self.txtMessageDisplay.text = ""
-    
+        
         self.refreshUI()
     }
     
@@ -182,16 +180,22 @@ class MainViewController: UIViewController, UITextViewDelegate, UIGestureRecogni
         
         // For display output message
         var displayMessage = ""
-        for i in 0 ..< messageParts.count {
-            if i < messageParts.count - 1 {
-                displayMessage += "\(i + 1)/\(messageParts.count) \(messageParts[i])\n"
+        if messageParts.count > 1 {
+            for i in 0 ..< messageParts.count {
+                if i < messageParts.count - 1 {
+                    displayMessage += "\(i + 1)/\(messageParts.count) \(messageParts[i])\n"
+                }
+                else {
+                    displayMessage += "\(i + 1)/\(messageParts.count) \(messageParts[i])"
+                }
             }
-            else {
-                displayMessage += "\(i + 1)/\(messageParts.count) \(messageParts[i])"
-            }
+        } else {
+            displayMessage += "\(messageParts[0])"
         }
+        
         self.txtMessageDisplay.text = displayMessage
+        self.refreshUI()
     }
-
+    
 }
 

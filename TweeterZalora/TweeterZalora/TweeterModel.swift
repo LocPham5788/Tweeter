@@ -53,7 +53,8 @@ class TweeterModel: NSObject {
         if inputMessage.characters.count <= 50 {
             partResults.append(inputMessage)
         } else {
-            let numberOfLine:Double = Double(Double(message.characters.count)/50).rounded()
+            let numberOfLine:Double = Double(message.characters.count)/50 >= 1.5 ? Double(Double(message.characters.count)/50).rounded() : 2.0
+            
             for y in 0..<Int(numberOfLine) {
                 let characterAppend = "\(y)/\(Int(numberOfLine))"
                 let characTerApeendSpace = characterAppend.characters.count + 2
