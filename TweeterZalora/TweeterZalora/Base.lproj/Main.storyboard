@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YqV-Iq-wc0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ffw-Kq-yxI">
+            <objects>
+                <navigationController id="YqV-Iq-wc0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NhN-lG-G9s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="de5-U6-iqk" kind="relationship" relationship="rootViewController" id="uLn-6l-Cn0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2D-l8-Uf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="123"/>
+        </scene>
+        <!--Tweeter Zalora-->
+        <scene sceneID="qNe-Eg-b9L">
+            <objects>
+                <viewController id="de5-U6-iqk" customClass="MainViewController" customModule="TweeterZalora" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Dm-zn-Jbu"/>
+                        <viewControllerLayoutGuide type="bottom" id="F23-R1-b5C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OX6-et-bdB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi4-iY-7rv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="543"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoF-V8-phI">
+                                        <rect key="frame" x="8" y="0.0" width="359" height="535"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75686274509803919" green="0.95686274509803915" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VoF-V8-phI" firstAttribute="top" secondItem="pi4-iY-7rv" secondAttribute="top" id="7uV-7f-4ci"/>
+                                    <constraint firstItem="VoF-V8-phI" firstAttribute="leading" secondItem="pi4-iY-7rv" secondAttribute="leading" constant="8" id="BE1-fg-zEI"/>
+                                    <constraint firstAttribute="bottom" secondItem="VoF-V8-phI" secondAttribute="bottom" constant="8" id="JbB-Ge-POr"/>
+                                    <constraint firstAttribute="trailing" secondItem="VoF-V8-phI" secondAttribute="trailing" constant="8" id="e7i-b2-BZ4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdG-7D-Q2x">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkR-pE-ezr">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLs-up-5dR">
+                                        <rect key="frame" x="292" y="8" width="75" height="44"/>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.4431372549" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="1lZ-aN-De2"/>
+                                            <constraint firstAttribute="width" constant="75" id="Moi-aX-Jhq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="SEND"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="de5-U6-iqk" eventType="touchUpInside" id="zjh-Rc-mIX"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chars: 500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp8-MO-Dbv">
+                                        <rect key="frame" x="292" y="8" width="75" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="QhC-NP-myl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmw-rR-c2E">
+                                        <rect key="frame" x="8" y="8" width="276" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="de5-U6-iqk" id="UUU-wV-3Ir"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Zmw-rR-c2E" firstAttribute="leading" secondItem="fkR-pE-ezr" secondAttribute="leading" constant="8" id="6fw-I3-PtZ"/>
+                                    <constraint firstItem="Fp8-MO-Dbv" firstAttribute="leading" secondItem="Zmw-rR-c2E" secondAttribute="trailing" constant="8" id="9d7-03-Fiz"/>
+                                    <constraint firstItem="Zmw-rR-c2E" firstAttribute="top" secondItem="fkR-pE-ezr" secondAttribute="top" constant="8" id="EvO-Pq-Xys"/>
+                                    <constraint firstAttribute="bottom" secondItem="Zmw-rR-c2E" secondAttribute="bottom" constant="8" id="FoY-bP-4pu"/>
+                                    <constraint firstAttribute="trailing" secondItem="jLs-up-5dR" secondAttribute="trailing" constant="8" id="Uhh-yN-dsw"/>
+                                    <constraint firstAttribute="bottom" secondItem="jLs-up-5dR" secondAttribute="bottom" constant="8" id="a1b-N0-VUA"/>
+                                    <constraint firstItem="Fp8-MO-Dbv" firstAttribute="top" secondItem="fkR-pE-ezr" secondAttribute="top" constant="8" id="euH-7Z-4qz"/>
+                                    <constraint firstItem="jLs-up-5dR" firstAttribute="leading" secondItem="Zmw-rR-c2E" secondAttribute="trailing" constant="8" id="gUt-JV-wGD"/>
+                                    <constraint firstAttribute="height" constant="60" id="mhW-v2-OFx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fp8-MO-Dbv" secondAttribute="trailing" constant="8" id="vh7-2Y-g3i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rdG-7D-Q2x" firstAttribute="top" secondItem="2Dm-zn-Jbu" secondAttribute="bottom" id="0Bl-vg-hLA"/>
+                            <constraint firstItem="F23-R1-b5C" firstAttribute="top" secondItem="fkR-pE-ezr" secondAttribute="bottom" id="7sC-J4-VoL"/>
+                            <constraint firstAttribute="trailing" secondItem="rdG-7D-Q2x" secondAttribute="trailing" id="8Yh-EJ-ZoN"/>
+                            <constraint firstAttribute="trailing" secondItem="pi4-iY-7rv" secondAttribute="trailing" id="DXp-8X-4o1"/>
+                            <constraint firstItem="pi4-iY-7rv" firstAttribute="top" secondItem="2Dm-zn-Jbu" secondAttribute="bottom" id="EzR-ax-ViK"/>
+                            <constraint firstAttribute="trailing" secondItem="fkR-pE-ezr" secondAttribute="trailing" id="Nl4-Pt-y6L"/>
+                            <constraint firstItem="fkR-pE-ezr" firstAttribute="leading" secondItem="OX6-et-bdB" secondAttribute="leading" id="Oeu-Z8-BgW"/>
+                            <constraint firstItem="pi4-iY-7rv" firstAttribute="leading" secondItem="OX6-et-bdB" secondAttribute="leading" id="eje-U2-k6B"/>
+                            <constraint firstItem="F23-R1-b5C" firstAttribute="top" secondItem="rdG-7D-Q2x" secondAttribute="bottom" id="gm3-0W-FXM"/>
+                            <constraint firstItem="fkR-pE-ezr" firstAttribute="top" secondItem="pi4-iY-7rv" secondAttribute="bottom" id="mcl-Tm-Yha"/>
+                            <constraint firstItem="rdG-7D-Q2x" firstAttribute="leading" secondItem="OX6-et-bdB" secondAttribute="leading" id="unv-Ea-VB2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tweeter Zalora" id="48y-7Y-wXm"/>
+                    <connections>
+                        <outlet property="btnSend" destination="jLs-up-5dR" id="aq9-mG-U61"/>
+                        <outlet property="dissmissableView" destination="rdG-7D-Q2x" id="Yax-2H-AQ1"/>
+                        <outlet property="heightOfInputView" destination="mhW-v2-OFx" id="gNl-mE-cr1"/>
+                        <outlet property="heightOfLabelCharsCount" destination="QhC-NP-myl" id="f6G-Do-Vin"/>
+                        <outlet property="heightOfSendButton" destination="1lZ-aN-De2" id="qts-Zn-p2j"/>
+                        <outlet property="inputMessageView" destination="fkR-pE-ezr" id="1Gf-ax-5D0"/>
+                        <outlet property="mLabelCharsCount" destination="Fp8-MO-Dbv" id="F1y-Gb-T9j"/>
+                        <outlet property="marginBottomOfInputView" destination="7sC-J4-VoL" id="BfH-4b-Olj"/>
+                        <outlet property="txtInputMessage" destination="Zmw-rR-c2E" id="ot7-R2-I7V"/>
+                        <outlet property="txtMessageDisplay" destination="VoF-V8-phI" id="xg5-4N-d1R"/>
+                        <outlet property="vwDisplayedMessage" destination="pi4-iY-7rv" id="vtN-bK-9bc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A57-Tn-mok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557.60000000000002" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
